@@ -245,8 +245,8 @@ test('Testing flipkart using HOVER to signup and login, request OTP', async({pag
 
 // })
 
-// test.only('Testing Drag and Drop functionality', async({page}) =>{
-//     await page.goto('https://www.globalsqa.com/demo-site/draganddrop/');
-//     await page.locator('//ul[@id="gallery"]/li[1]').dragTo(page.locator+('//div[@id="trash"]'));
-//     await page.waitForTimeout(5000);
-// });
+test.only('Testing Drag and Drop functionality', async({page}) =>{
+    await page.goto('https://www.globalsqa.com/demo-site/draganddrop/');
+    await page.locator('//ul[@id="gallery"]/li[1]').dragTo(page.locator+('//div[@id="trash"]'));
+    await page.waitForTimeout(5000);
+});
