@@ -1,0 +1,36 @@
+{
+    "employees": [
+        {
+            "id": 101,
+	    "mobileno": 8741598745,
+	    "secondarymobno": 7895412658,
+            "name": "John",
+            "skillset": [
+                "Java",
+                "API",
+                "Selenium"
+            ]
+        },
+        {
+            "id": 102,
+	     "mobileno": 8741598548,
+	    "secondarymobno": 7895418658,
+            "name": "David",
+            "skillset": [
+                "Playwright",
+                "JavaScript"
+            ]
+        },
+        {
+            "id": 103,
+            "mobileno": 8771598548,
+	    "secondarymobno": 7795418658,
+            "name": "Prince",
+            "skillset": [
+                "API",
+                "Playwright",
+                "JavaScript"
+            ]
+        }
+    ]
+}
