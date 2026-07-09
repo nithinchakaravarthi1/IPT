@@ -70,7 +70,7 @@ test('select login for flipcard',async ({ page }) => {
     await page.waitForTimeout(7000);
 });
 
-test('IPL CSK point print', async ({ page }) => {
+test.only('IPL CSK point print', async ({ page }) => {
     await page.goto('https://www.iplt20.com/matches/points-table');
     const cskPoints = await page.locator('//div[@class="points-table-page"]/descendant::tbody[@id="pointsdata"]/descendant::h2[contains(text(),"RCB")]/ancestor::tr[@ng-repeat="list in pointsTableData"]/descendant::td[@class="bt ng-binding"]').textContent();
     console.log('CSK Points:', cskPoints);
