@@ -245,9 +245,10 @@ test('Testing flipkart using HOVER to signup and login, request OTP', async({pag
 
 // })
 
-test('Testing Drag and Drop functionality', async({page}) =>{
+test.only('Testing Drag and Drop functionality with frame', async({page}) =>{
     await page.goto('https://www.globalsqa.com/demo-site/draganddrop/');
-    await page.frameLocator('//div[@class="twelve columns"]/descendant::iframe[@class="demo-frame"][1]')
+    const frame = await page.frameLocator('(//iframe[@class="demo-frame"])[1]')
+    await frame.locator('//ul[@id="gallery"]/li[1]').dragTo(frame.locator('//div[@id="trash"]'));
 //     await page.locator('//ul[@id="gallery"]/li[1]').dragTo(page.locator+('//div[@id="trash"]'));
-//     await page.waitForTimeout(5000);
+    await page.waitForTimeout(5000);
 });
