@@ -245,10 +245,38 @@ test('Testing flipkart using HOVER to signup and login, request OTP', async({pag
 
 // })
 
-test.only('Testing Drag and Drop functionality with frame', async({page}) =>{
+test('Testing Drag and Drop functionality with Frame ', async({page}) =>{
     await page.goto('https://www.globalsqa.com/demo-site/draganddrop/');
     const frame = await page.frameLocator('(//iframe[@class="demo-frame"])[1]')
     await frame.locator('//ul[@id="gallery"]/li[1]').dragTo(frame.locator('//div[@id="trash"]'));
 //     await page.locator('//ul[@id="gallery"]/li[1]').dragTo(page.locator+('//div[@id="trash"]'));
     await page.waitForTimeout(5000);
 });
+
+test('keyboard Action', async({page}) =>{
+    await page.goto('https://www.amazon.in/');
+    // await page.getByRole('searchbox').fill('laptop');
+    // await page.getByRole('searchbox').fill('iphone'); // From above if i give fill() again, it will delete the existing and fill the new
+    // await page.getByRole('searchbox').type('iphone',{delay:1000});
+    // await page.getByRole('searchbox').type('iphone',{delay:1000}); // From above if i give type() again, it will add with existing text
+    await page.keyboard.press('Control+A'); // Select all text
+    await page.waitForTimeout(3000);
+    await page.keyboard.press('Control+X'); // Cut all text
+    await page.waitForTimeout(3000);
+    await page.keyboard.press('Control+V'); // Paste all text co
+    await page.waitForTimeout(3000);
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(3000);
+});
+
+test.only('Mouse Action', async({page}) =>{
+    // await page.goto('https://www.amazon.in/');
+    // await page.getByAltText('Hello, sign in').hover();
+    // await page.getByAltText('Appliances for your home | Up to 55% off').click({button: "right"});
+    // await page.waitForTimeout(4000);
+    // await page.mouse.wheel(0,900);
+    // await page.waitForTimeout(10000);
+    await page.goto('https://demoqa.com/buttons');
+    await page.getByRole('button',{name:'Double Click Me'}).dblclick();
+    await page.waitForTimeout(5000);
+})
